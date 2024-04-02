@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TumorScope - Homepage</title>
+    <meta name="theme-color" content="rgb(206, 255, 255)">
+    <link rel="shortcut icon" href="{{ url_for('logo', svg_path='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('logo', svg_path='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul id="navbar">
+            <li><a href="/" class="nav-active">Home</a></li>
+            <li><a href="/patient">For Patient</a></li>
+            <li><a href="/doctor">For Doctor</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="info">
+            <div class="container">
+                <div class="header1">
+                    <img id="logo-img" src="{{ url_for('logo', svg_path='logo.svg') }}" alt="logo" height="50">
+                    <h1 class="headings">TumorScope</h1>
+                </div>
+                <div class="header2">
+                    <h2 class="headings">Brain Tumor Navigator</h2>
+                </div>
+<hr>
+                <div class="main">
+                    <h3 class="headings">What is TumorScope?</h3>
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Step into the future of healthcare with TumorScope – your vigilant companion in the fight against brain tumors. In a world where every second counts, our AI-driven project is your first line of defense, empowering you with swift and accurate predictions like never before. <br>
+        
+                        &nbsp;&nbsp;&nbsp;&nbsp;Harnessing the power of artificial intelligence, TumorScope has been meticulously trained on a wealth of brain tumor data, enabling it to spot even the subtlest signs with precision. Say goodbye to uncertainty and hello to proactive care. <br>
+        
+                        &nbsp;&nbsp;&nbsp;&nbsp;Whether you're a healthcare professional seeking reliable support or an individual with concerns, TumorScope offers a seamless and intuitive platform for early detection. It's time to rewrite the narrative of brain tumor diagnosis – join us in this exciting journey towards a healthier tomorrow.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

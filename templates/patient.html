@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TumorScope - For Patient</title>
+    <meta name="theme-color" content="rgb(206, 255, 255)">
+    <link rel="shortcut icon" href="{{ url_for('logo', svg_path='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('logo', svg_path='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul id="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/patient" class="nav-active">For Patient</a></li>
+            <li><a href="/doctor">For Doctor</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="info">
+            <div class="container">
+                <div class="header1">
+                    <img id="logo-img" src="{{ url_for('logo', svg_path='logo.svg') }}" alt="logo" height="50">
+                    <h1 class="headings">TumorScope</h1>
+                </div>
+                <div class="header2">
+                    <h2 class="headings">Brain Tumor Navigator</h2>
+                </div>
+<hr>
+                <div class="main">
+                    <h3 class="headings">For Patient</h3>
+                    
+
+                    <form action="/upload_patient" class="main-form" method="post" enctype="multipart/form-data">
+                        <div class="form-1">
+                            <label for="name">Name:</label>
+                            <input id="name" type="text" name="name" required>
+                        </div>
+                        <div class="form-1">
+                            <label for="age">Age:</label>
+                            <input id="age" type="text" name="age" pattern="[0-9]+" required>
+                        </div>
+                        <div class="form-1">
+                            <label for="phn">Phone No.:</label>
+                            <input id="phn" type="text" name="phn" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="form-1">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender">
+                                <option value="NA">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="file-card form-1">
+                            <h4>Upload Your MRI Scan</h4>
+                            <p>.jpg, .png, .jpeg and .jfif</p>
+                            <input type="file" id="files" name="file" class="hidden" required accept=".jpg, .png, .jpeg and .jfif">
+                            <label for="files" id="chfile"><img id="ch-img" src="{{ url_for('logo', svg_path='chfile.svg') }}"
+                                    alt="file" height="20">Choose file</label>
+                        </div>
+                        <div class="sub form-1">
+                            <button id="sub-btn" type="submit" value="upload">Submit</button>
+                        </div>
+                    </form>
+            
+                    <div class="container3">
+                        <h3>Your Last Report</h3>
+                        <div class="part1">
+                            <div class="part" id="name1"> 
+                                <span class="attribute">Name:</span>
+                                <span class="values"> {{ data[0] }} </span>
+                            </div>
+                            <div class="part" id="age1">
+                                <span class="attribute">Age:</span>
+                                <span class="values">{{ data[1] }}</span>
+                            </div>
+                            <div class="part" id="phn1">
+                                <span class="attribute">Phone No.:</span>
+                                <span class="values">{{ data[2] }}</span>
+                            </div>
+                            <div class="part" id="result1">
+                                <span class="attribute">Result:</span>
+                                <span class="values">{{ data[4] }}</span>
+                            </div>
+                        </div>
+                        <button class="tryBtn"><a href="/patient">Try Again</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        // Get the file input element
+        const fileInput = document.getElementById('files');
+
+        // Get the label element
+        const fileLabel = document.getElementById('chfile');
+
+        // Add event listener for file input change
+        fileInput.addEventListener('change', (event) => {
+            if (event.target.files.length > 0)
+                fileLabel.innerHTML = "File selected";
+            else
+                fileLabel.innerHTML = "Choose a file";
+        });
+    </script>
+</body>
+</html>

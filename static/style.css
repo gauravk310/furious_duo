@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Calistoga", serif;
+}
+
+/* Utility class */
+.headings{
+    font-family: "Bakbak One", sans-serif;
+    text-align: center;
+}
+
+hr{
+    width: 70%;
+    margin: 5px auto;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+body{
+    background: url(bg.svg) no-repeat center center/cover fixed;
+}
+
+#navbar{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    list-style: none;
+    margin: 10px;
+}
+
+#navbar li{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+#navbar li a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar li a:hover{
+    color: rgb(0, 0, 0);
+}
+
+#navbar li .nav-active{
+    text-decoration: none;
+    color: #000;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.header1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header1 h1{
+    font-size: 4rem;
+    margin: 0;
+}
+
+.header2 h2{
+    font-size: 2.4rem;
+}
+
+.main h3{
+    font-size: 2rem;
+}
+
+.main p{
+    font-size: 1.2rem;
+    padding: 10px 30px;
+}
+
+#files{
+    display: none;
+}
+
+form {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: left;
+    margin: 10px 30px;
+    padding: 10px;
+}
+
+form input {
+    width: 89.5%;
+    padding: 5px;
+    padding-left: 20px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid rgb(0, 0, 0, 0.3);
+    border-radius: 50px;
+    color: black;
+    font-size: 1rem;
+}
+
+#age {
+    margin-left: 2%;
+}
+
+#phn {
+    width: 83.8%;
+}
+
+#gender {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid rgb(0, 0, 0, 0.3);
+    color: black;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-align: center;
+    width: 15%;
+}
+
+.main-form label {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.file-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid rgb(0, 0, 0, 0.3);
+    align-items: center;
+    width: 70%;
+    border-radius: 30px;
+    margin: 10px auto;
+}
+
+.file-card h4 {
+    margin-top: 15px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.file-card p {
+    color: black;
+    margin-top: 0;
+    font-size: .7rem;
+}
+
+#chfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#chfile:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid rgb(0, 0, 0, 0.3);
+}
+
+#chfile img {
+    filter: invert(1);
+    margin-right: 5px;
+}
+
+#sub-btn {
+    cursor: pointer;
+    color: black;
+    background-color: rgb(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    width: 30%;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 2.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#sub-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid rgb(0, 0, 0, 0.3);
+}
+
+.sub {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container3{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    
+    flex-direction: column;
+}
+
+.container3 h3{
+    text-align: center;
+    font-size: 1.7rem;
+    font-family: "Alfa Slab One", serif;
+}
+
+.container3 .part .attribute{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.container3 .part .values{
+    font-size: 1.3rem;
+}
+
+.container3 .part .values{
+    font-size: 1.3rem;
+}
+
+.container3 .tryBtn{
+    margin: 0 auto;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all ease-in-out 0.2s;
+}
+
+.container3 .tryBtn:hover{
+    background: rgba(255, 255, 255);
+}
+
+.container3 .tryBtn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.container4{
+    margin: 20px;
+    font-size: .8rem;
+}
+
+
+
+@media screen and (max-width: 768px){
+    body{
+        background: url(bg.svg) no-repeat center left fixed;
+    }
+
+    #navbar{
+        width: 95%;
+    }
+
+
+    .container{
+        width: 90%;
+    }
+
+    .header1 h1{
+        font-size: 2.7rem;
+    }
+
+    .header1 #logo-img{
+        height: 40px;
+    }
+
+    .header2 h2{
+        font-size: 1.7rem;
+    }
+
+    .main h3{
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+
+    .main p{
+        font-size: 1rem;
+    }
+    
+    form {
+        width: 95%;
+        margin: 0 10px;
+        padding: 0px;
+    }
+    
+    form input {
+        width: 80%;
+    }
+    
+    #age {
+        margin-left: 4%;
+    }
+    
+    #phn {
+        width: 70%;
+    }
+    
+    #gender {
+        margin-top: 5px;
+        width: 30%;
+    }
+    
+    .main-form label {
+        font-size: 1rem;
+    }
+    
+    .file-card {
+        width: 95%;
+    }
+    
+    .file-card p {
+        color: black;
+        margin-top: 0;
+        font-size: .7rem;
+    }
+    
+    #chfile {
+        width: 45%;
+    }
+    
+    #sub-btn {
+        width: 40%;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    #sub-btn:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 3px solid rgb(0, 0, 0, 0.3);
+    }
+    
+    .container3{
+        width: 90%;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+    
+    .container3 h3{
+        font-size: 1.5rem;
+    }
+    
+    .container3 .part .attribute{
+        font-size: 1rem;
+    }
+    
+    .container3 .part .values{
+        font-size: 1rem;
+    }
+    
+    .container3 .tryBtn{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+}

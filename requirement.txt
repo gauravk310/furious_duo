@@ -1,0 +1,8 @@
+flask
+pandas
+numpy
+tensorflow
+matplotlib
+scikit-learn
+openpyxl
+pillow

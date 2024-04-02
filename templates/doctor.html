@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TumorScope - For Doctor</title>
+    <meta name="theme-color" content="rgb(206, 255, 255)">
+    <link rel="shortcut icon" href="{{ url_for('logo', svg_path='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('logo', svg_path='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul id="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/patient">For Patient</a></li>
+            <li><a href="/doctor" class="nav-active">For Doctor</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="info">
+            <div class="container">
+                <div class="header1">
+                    <img id="logo-img" src="{{ url_for('logo', svg_path='logo.svg') }}" alt="logo" height="50">
+                    <h1 class="headings">TumorScope</h1>
+                </div>
+                <div class="header2">
+                    <h2 class="headings">Brain Tumor Navigator</h2>
+                </div>
+<hr>
+                <div class="main">
+                    <h3 class="headings">For Doctor</h3>
+                    
+
+                    <form action="/upload_doctor" class="main-form" method="post" enctype="multipart/form-data">
+                        <div class="file-card form-1">
+                            <h4>Upload Multiple MRI Scans</h4>
+                            <p>.jpg, .png, .jpeg and .jfif</p>
+                            <input type="file" id="files" name="file" class="hidden" required accept=".jpg, .png, .jpeg and .jfif" multiple>
+                            <label for="files" id="chfile"><img id="ch-img" src="{{ url_for('logo', svg_path='chfile.svg') }}"
+                                    alt="file" height="20">Choose file</label>
+                        </div>
+                        <div class="sub form-1">
+                            <button id="sub-btn" type="submit" value="upload">Submit</button>
+                        </div>
+                    </form>
+                    <div class="container4">
+                        {% for file in files %}
+                        <h1>{{file}}</h1>
+                        {% endfor %}
+                        <!-- {{ files | safe }} -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        // Get the file input element
+        const fileInput = document.getElementById('files');
+    
+        // Get the label element
+        const fileLabel = document.getElementById('chfile');
+    
+        // Add event listener for file input change
+        fileInput.addEventListener('change', (event) => {
+            if (event.target.files.length > 0){
+                fileLabel.innerHTML = "Files selected:\n";
+                const fileList = Array.from(event.target.files).map(file => file.name);
+                fileLabel.innerHTML += fileList.join("\n");
+            }
+            else
+                fileLabel.innerHTML = "Choose a file";
+        });
+      </script>
+</body>
+</html>
