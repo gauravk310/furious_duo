@@ -5,6 +5,27 @@ from a import prediction
 import socket
 import pandas as pd
 
+def style_df(df):
+    df = df.reset_index(drop=True)
+    return df.style \
+        .set_properties(**{'background-color': 'white', 
+                           'color': 'black', 
+                           'border-color': 'black',
+                           'font-size': '1.6rem',
+                           'width':'80%',
+                           'text-align':'center',
+                           'margin':'0 1rem'}) \
+        .set_table_styles([{'selector': 'thead',
+                            'props': [('background-color', 'rgb(128,128,128,0.5)'),
+                                      ('color', 'black'),
+                                      ('border-color', 'white'),
+                                      ('font-size','2rem')]},
+                           {'selector': 'tbody tr:hover',
+                            'props': [('background-color', 'skyblue')
+                                      ]}])
+
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -27,7 +48,7 @@ def patient_data():
     img = Image.open(file)
     result = prediction(img)
     message = [[f'Name : {name}'],[f'Gender : {gender}'],[f'Age : {age}'],[f'File Name : {file.filename}'],[f'Result :{result}']]
-    data = [name,gender,age,file.filename,result]
+    data = [name,age,gender,contact,file.filename,result]
     dataset = Dataset(name=name,age=age,gender=gender,file_name=file.filename, contact=contact, result=result)
     if file:
         dataset.add(name=name, age=age,gender=gender,file_name=file.filename, contact=contact, result=result).save()
@@ -54,15 +75,12 @@ def doctor_data():
         result = prediction(img)
         pred.append(result)
     Doctor(files=doctor_files,reports=pred, rate=rates)
-    message = [[f'File Name : {doctor_files}'],[f'Result : {pred}']]
-    # df={
-    #     "files":doctor_files,
-    #     "Result":pred
-    # }
-    # df = pd.DataFrame(df)
-    # files = df.to_html(classes="table table-striped")
+    df = pd.DataFrame({"files":doctor_files,"Result":pred})
+    df = df.sort_values('Result',ascending=False)
+    df = style_df(df=df)
+    files = df.to_html(classes="table table-stripped",sparse_index=False)
     if doctor_files:
-        return render_template('doctor.html', files=message)
+        return render_template('doctor.html', files=files)
     
     else:
         return render_template('doctor.html', message=["Error: Failed to upload files"])

@@ -45,10 +45,10 @@
                         </div>
                     </form>
                     <div class="container4">
-                        {% for file in files %}
-                        <h1>{{file}}</h1>
-                        {% endfor %}
-                        <!-- {{ files | safe }} -->
+                        <!-- {% for file in files %} -->
+                        <!-- <h1>{{file}}</h1> -->
+                        <!-- {% endfor %} -->
+                        {{ files | safe }}
                     </div>
 
                 </div>
