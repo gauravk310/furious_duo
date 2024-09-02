@@ -1,2 +1,3 @@
 # furious_duo
- this is a github repository created for storing files of our project at SVERI Hackathon
+ This is a github repository created for storing files of our project at SVERI Hackathon.
+ live at :- https://tumorscope.onrender.com/
