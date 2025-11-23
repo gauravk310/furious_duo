@@ -95,13 +95,6 @@ To test the TumorScope application, follow these steps:
 * **Integration Tests**: 90% coverage of API endpoints.
 * **End-to-End Tests**: 95% coverage of user journeys.
 
-📸 Screenshots
--------------
-The following screenshots demonstrate the TumorScope application:
-
-* **Patient Portal**: [Screenshot of patient portal](https://via.placeholder.com/300)
-* **Doctor Portal**: [Screenshot of doctor portal](https://via.placeholder.com/300)
-* **Diagnostic Report**: [Screenshot of diagnostic report](https://via.placeholder.com/300)
 
 📦 API Reference
 ----------------
