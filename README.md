@@ -112,13 +112,9 @@ The TumorScope API provides the following endpoints:
 * **/diagnosis**: Get a diagnostic report for a patient.
 * **/treatment**: Get a treatment plan for a patient.
 
-### API Documentation
-* **Patient API**: [API documentation for patient API](https://docs.tumorscope.com/patient-api)
-* **Doctor API**: [API documentation for doctor API](https://docs.tumorscope.com/doctor-api)
-
 👤 Author
 --------
-The TumorScope application was developed by [Your Name](https://github.com/your-username).
+The TumorScope application was developed by [Gaurav Kadam](https://github.com/gauravk310).
 
 📝 License
 --------
